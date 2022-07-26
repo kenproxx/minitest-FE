@@ -33,3 +33,4 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('.content span')?.textContent).toContain('minitestFE app is running!');
   });
 });
+
