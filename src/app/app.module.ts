@@ -8,6 +8,8 @@ import { LogoutComponent } from './logout/logout.component';
 import { UpdateComponent } from './update/update.component';
 import {HttpClientModule} from "@angular/common/http";
 import { HomeComponent } from './home/home.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -16,12 +18,14 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     LogoutComponent,
     UpdateComponent,
-    HomeComponent
+    HomeComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-  HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
 
   ],
   providers: [],

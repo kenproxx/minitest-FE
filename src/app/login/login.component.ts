@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {Router} from "@angular/router";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-login',
@@ -9,27 +10,33 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent implements OnInit {
 
-  username?: any;
-  password?: any;
 
+   accout : FormGroup = new FormGroup(
+    {
+      username: new FormControl(),
+      password: new FormControl()
+    }
+  )
+obj: any
   constructor(private httpClient: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   login() {
-    let accout = {
-      "username": this.username,
-      "password": this.password
-    }
-    console.log(accout)
-    this.httpClient.post('http://localhost:8080/login', accout).subscribe(
+this.obj = {
+  username: this.accout.value.username,
+  password: this.accout.value.password
+}
+    this.httpClient.post('http://localhost:8080/login', this.obj).subscribe(
+
       (data: any) => {
+        console.log(data  )
         this.router.navigate(['/home'])
 
       }, error => {
         console.log(error);
-        console.log(accout)
+        console.log(this.obj)
       }
     );
   }

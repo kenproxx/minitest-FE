@@ -1,5 +1,8 @@
-<form >
-  <input type="text" [className]="username"> username
-  <input type="password" [className]="password">Password
-  <button type="submit" (click)="login()">Submit</button>
+<hr>
+
+Đăng nhập
+<form (submit)="login()" [formGroup]="accout" >
+  <input type="text" formControlName="username"> username
+  <input type="password" formControlName="password">Password
+  <button type="submit" >Submit</button>
 </form>
