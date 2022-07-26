@@ -6,17 +6,23 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { UpdateComponent } from './update/update.component';
+import {HttpClientModule} from "@angular/common/http";
+import { HomeComponent } from './home/home.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     LogoutComponent,
-    UpdateComponent
+    UpdateComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+  HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
