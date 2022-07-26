@@ -10,7 +10,7 @@ import {FormControl, FormGroup} from "@angular/forms";
 })
 export class LoginComponent implements OnInit {
 
-
+check: any;
    accout : FormGroup = new FormGroup(
     {
       username: new FormControl(),
@@ -32,6 +32,8 @@ this.obj = {
 
       (data: any) => {
         console.log(data  )
+       localStorage.setItem('token', data.token)
+        localStorage.setItem('id', data.id)
         this.router.navigate(['/home'])
 
       }, error => {

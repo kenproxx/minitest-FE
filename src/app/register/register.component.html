@@ -1,0 +1,7 @@
+<hr>
+Đăng kí
+<form (submit)="register()" [formGroup]="accout" >
+  <input type="text" formControlName="username"> username
+  <input type="password" formControlName="password">Password
+  <button type="submit" >Submit</button>
+</form>

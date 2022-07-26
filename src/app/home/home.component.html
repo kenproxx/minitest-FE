@@ -1,3 +1,11 @@
 <router-outlet></router-outlet>
-<a routerLink="">sửa thông tin</a>
-<a routerLink="logout">Logout</a>
+<div >
+ {{user.username}},
+  <img src="{{user.img}}" alt="">
+</div>
+<hr>
+<div *ngIf="check">
+  <a routerLink="update">sửa thông tin</a>
+  <a routerLink="/logout">Logout</a>
+</div>
+
